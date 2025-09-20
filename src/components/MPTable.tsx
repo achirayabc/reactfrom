@@ -46,22 +46,15 @@ export default function MPTable({ members, onEdit, onDelete }: Props) {
                 {m.achievements && <div className="mt-1">{m.achievements}</div>}
               </td>
               <td className="p-2 border text-center">
-  <div className="flex justify-center gap-2">
-    <button
-      onClick={() => onEdit(i)}
-      className="px-3 py-1 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition shadow-sm"
-    >
-      แก้ไข
-    </button>
-    <button
-      onClick={() => onDelete(i)}
-      className="px-3 py-1 bg-red-600 text-white rounded-lg hover:bg-red-700 transition shadow-sm"
-    >
-      ลบ
-      </button>
-        </div>
-        </td>
-
+                <div className="flex justify-center gap-2">
+                  <button onClick={() => onEdit(i)} className="px-3 py-1 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition shadow-sm">
+                    แก้ไข
+                  </button>
+                  <button onClick={() => onDelete(i)} className="px-3 py-1 bg-red-600 text-white rounded-lg hover:bg-red-700 transition shadow-sm">
+                    ลบ
+                  </button>
+                </div>
+              </td>
             </tr>
           ))}
         </tbody>
