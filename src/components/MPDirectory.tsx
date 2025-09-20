@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { MP } from "./types";
 import MPForm from "./MPForm";
 import MPTable from "./MPTable";
