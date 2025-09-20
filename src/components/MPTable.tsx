@@ -12,9 +12,9 @@ export default function MPTable({ members, onEdit, onDelete }: Props) {
 
   return (
     <div className="overflow-x-auto">
-      <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
+      <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden text-black">
         <thead className="bg-blue-100">
-          <tr>
+          <tr className="text-black">
             <th className="p-3 border">รูป</th>
             <th className="p-3 border">ชื่อ-นามสกุล</th>
             <th className="p-3 border">ตำแหน่ง / กระทรวง</th>
@@ -25,7 +25,7 @@ export default function MPTable({ members, onEdit, onDelete }: Props) {
         </thead>
         <tbody>
           {members.map((m, i) => (
-            <tr key={i} className="hover:bg-gray-50 transition">
+            <tr key={i} className="hover:bg-gray-50 transition text-black">
               <td className="p-2 border text-center">
                 <a href={m.photoUrl} target="_blank" rel="noopener noreferrer">
                   <img
@@ -35,7 +35,9 @@ export default function MPTable({ members, onEdit, onDelete }: Props) {
                   />
                 </a>
               </td>
-              <td className="p-2 border">{m.prefix} {m.firstName} {m.lastName}</td>
+              <td className="p-2 border">
+                {m.prefix} {m.firstName} {m.lastName}
+              </td>
               <td className="p-2 border">
                 {m.ministerPosition && <div>{m.ministerPosition}</div>}
                 {m.ministry && <div>{m.ministry}</div>}
@@ -47,10 +49,16 @@ export default function MPTable({ members, onEdit, onDelete }: Props) {
               </td>
               <td className="p-2 border text-center">
                 <div className="flex justify-center gap-2">
-                  <button onClick={() => onEdit(i)} className="px-3 py-1 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition shadow-sm">
+                  <button
+                    onClick={() => onEdit(i)}
+                    className="px-3 py-1 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition shadow-sm"
+                  >
                     แก้ไข
                   </button>
-                  <button onClick={() => onDelete(i)} className="px-3 py-1 bg-red-600 text-white rounded-lg hover:bg-red-700 transition shadow-sm">
+                  <button
+                    onClick={() => onDelete(i)}
+                    className="px-3 py-1 bg-red-600 text-white rounded-lg hover:bg-red-700 transition shadow-sm"
+                  >
                     ลบ
                   </button>
                 </div>
